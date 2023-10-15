@@ -2,12 +2,12 @@ from flask import Flask, request, render_template
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+import joblib
 
-app = Flask(__name)
+app = Flask(__name__)
 
-# Load your pre-trained logistic regression model
-model = LogisticRegression()
-model.load('your_model.pkl')  # Replace 'your_model.pkl' with the actual model file
+# Load pre-trained logistic regression model
+loaded_model = joblib.load('logistic_regression_model.pkl')
 
 @app.route('/')
 def index():
@@ -17,11 +17,22 @@ def index():
 def predict():
     if request.method == 'POST':
         # Get user inputs from the form
-        annual_income = float(request.form['annual_income'])
+        annual_income = float(request.form['income_annum'])
         loan_amount = float(request.form['loan_amount'])
+        loan_term = float(request.form['loan_term'])
+        cibil_score = float(request.form['cibil_score'])
+        no_of_dependents = float(request.form['no_of_dependents'])
+        residential_assets_value = float(request.form['residential_assets_value'])
+        commercial_assets_value = float(request.form['commercial_assets_value'])
+        luxury_assets_value = float(request.form['luxury_assets_value'])
+        bank_asset_value = float(request.form['bank_asset_value'])
 
         # Prepare the input data for prediction
-        input_data = pd.DataFrame({'income_annum': [annual_income], 'loan_amount': [loan_amount]})
+        input_data = pd.DataFrame({'income_annum': [annual_income], 'loan_amount': [loan_amount], 
+                                   'loan_term': [loan_term], 'cibil_score': [cibil_score],
+                                   'no_of_dependents': [no_of_dependents], 'residential_assets_value': [residential_assets_value],
+                                   'commercial_assets_value': [commercial_assets_value], 'luxury_assets_value': luxury_assets_value,
+                                    'bank_asset_value': bank_asset_value})
 
         # Standardize the input data if necessary
         scaler = StandardScaler()
