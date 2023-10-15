@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loan Approval Prediction</title>
+    
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+  <body>
+    <h1>Loan Approval Prediction</h1>
+    <p>Fill in the details to check if your loan request will be approved.</p>
+    
+    <form action="/predict" method="post">
+        <label for="annual_income">Annual Income:</label>
+        <input type="number" name="annual_income" id="annual_income" required>
+        
+        <br>
+        
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="number" name="loan_amount" id="loan_amount" required>
+        
+        <br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    <script>
+      function validateForm() {
+          var annualIncome = document.getElementById("annual_income").value;
+          var loanAmount = document.getElementById("loan_amount").value;
+          
+          if (isNaN(annualIncome) || isNaN(loanAmount)) {
+              alert("Please enter valid numbers for Annual Income and Loan Amount.");
+              return false; // Prevent form submission
+          }
+          
+          // Additional validation can be added here if needed
+          
+          return true; // Allow form submission if inputs are valid
+      }
+  </script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Our JavaScript -->
+  <!-- <script type="text/javascript" src="static/js/logic.js"></script> -->
+</body>
+
+</html>
