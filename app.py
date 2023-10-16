@@ -11,7 +11,7 @@ loaded_model = joblib.load('logistic_regression_model.pkl')
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # Create an HTML file for the input form
+    return render_template('index.html')  
 
 @app.route('/predict', methods=['POST'])
 def predict():

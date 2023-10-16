@@ -14,87 +14,61 @@
 
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
 
-  <body>
-    <h1>Loan Approval Prediction</h1>
-    <p>Fill in the details to check if your loan request will be approved.</p>
-    
-    <form action="/predict" method="post">
-        <label for="annual_income">Annual Income:</label>
-        <input type="number" name="annual_income" id="annual_income" required>
-        
-        <br>
-        
-        <label for="loan_amount">Loan Amount:</label>
-        <input type="number" name="loan_amount" id="loan_amount" required>
-        
-        <br>
-
-        <label for="loan_term">Loan Term (months):</label>
-        <input type="number" name="loan_term" id="loan_term" required>
-
-        <br>
-
-        <label for="cibil_score">Credit Score:</label>
-        <input type="number" name="cibil_score" id="cibil_score" required>
-
-        <br>
-
-        <label for="no_of_dependents">Number of Dependants:</label>
-        <input type="number" name="no_of_dependents" id="no_of_dependents" required>
-
-        <br> 
-
-        <label for="residential_assets_value">Residential Assets Value:</label>
-        <input type="number" name="residential_assets_value" id="residential_assets_value" required>
-        
-        <br>
-
-        <label for="commercial_assets_value">Commercial Assets Value:</label>
-        <input type="number" name="commercial_assets_value" id="commercial_assets_value" required>
-        
-        <br>
-
-        <label for="luxury_assets_value">Luxury Assets Value:</label>
-        <input type="number" name="luxury_assets_value" id="luxury_assets_value" required>
-
-        <br>
-
-        <label for="bank_asset_value">Bank Assets Value:</label>
-        <input type="number" name="bank_asset_value" id="bank_asset_value" required>
-
-        <input type="submit" value="Predict">
-    </form>
-
-    <script>
-      function validateForm() {
-          var annualIncome = document.getElementById("annual_income").value;
-          var loanAmount = document.getElementById("loan_amount").value;
-          
-          if (isNaN(annualIncome) || isNaN(loanAmount)) {
-              alert("Please enter valid numbers for Annual Income and Loan Amount.");
-              return false; // Prevent form submission
-          }
-          
-          // Additional validation can be added here if needed
-          
-          return true; // Allow form submission if inputs are valid
-      }
-  </script>
-
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-
-  <!-- D3 JavaScript -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+  <h1>Loan Approval Prediction</h1>
+  <p>Fill in the details to check if your loan request will be approved.</p>
   
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <form action="/predict" method="post" onsubmit="predictLoanApproval(); return validateForm();" id="loan-form">
+      <label for="income_annum">Annual Income:</label>
+      <input type="number" name="income_annum" id="income_annum" required>
+      
+      <br>
+      
+      <label for="loan_amount">Loan Amount:</label>
+      <input type="number" name="loan_amount" id="loan_amount" required>
+      
+      <br>
+
+      <label for="loan_term">Loan Term (months):</label>
+      <input type="number" name="loan_term" id="loan_term" required>
+
+      <br>
+
+      <label for="cibil_score">Credit Score:</label>
+      <input type="number" name="cibil_score" id="cibil_score" required>
+
+      <br>
+
+      <label for="no_of_dependents">Number of Dependents:</label>
+      <input type="number" name="no_of_dependents" id="no_of_dependents" required>
+
+      <br> 
+
+      <label for="residential_assets_value">Residential Assets Value:</label>
+      <input type="number" name="residential_assets_value" id="residential_assets_value" required>
+      
+      <br>
+
+      <label for="commercial_assets_value">Commercial Assets Value:</label>
+      <input type="number" name="commercial_assets_value" id="commercial_assets_value" required>
+      
+      <br>
+
+      <label for="luxury_assets_value">Luxury Assets Value:</label>
+      <input type="number" name="luxury_assets_value" id="luxury_assets_value" required>
+
+      <br>
+
+      <label for="bank_asset_value">Bank Assets Value:</label>
+      <input type="number" name="bank_asset_value" id="bank_asset_value" required>
+
+      <input type="submit" value="Predict">
+  </form>
 
   <!-- Our JavaScript -->
-  <!-- <script type="text/javascript" src="static/js/logic.js"></script> -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
 </body>
 
 </html>
