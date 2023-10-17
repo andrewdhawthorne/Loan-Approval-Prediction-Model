@@ -7,7 +7,7 @@ import joblib
 app = Flask(__name__)
 
 # Load pre-trained logistic regression model
-loaded_model = joblib.load('logistic_regression_model.pkl')
+loaded_model = joblib.load('Models/logistic_regression_model.pkl')
 
 @app.route('/')
 def index():
@@ -16,6 +16,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
+        print("Received a POST request to /predict")  
         # Get user inputs from the form
         annual_income = float(request.form['income_annum'])
         loan_amount = float(request.form['loan_amount'])
@@ -39,15 +40,18 @@ def predict():
         input_data = scaler.transform(input_data)
 
         # Make a prediction
-        prediction = model.predict(input_data)
+        prediction = loaded_model.predict(input_data)
 
-        # Return the result to the user
+         # Return the result to the user
         if prediction[0] == 1:
             result = "Approved"
         else:
             result = "Not Approved"
 
         return f"Loan Status: {result}"
+    else:
+        print("Received a request other than POST to /predict")
+        return "Method Not Allowed", 405
 
 if __name__ == '__main__':
     app.run()
