@@ -6,3 +6,4 @@ https://www.geeksforgeeks.org/filter-pandas-dataframe-with-multiple-conditions/
 https://www.statology.org/pandas-plot-multiple-series/
 https://pandas.pydata.org/docs/reference/api/pandas.Series.plot.line.html
 https://pandas.pydata.org/docs/reference/api/pandas.Series.plot.bar.html
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html
