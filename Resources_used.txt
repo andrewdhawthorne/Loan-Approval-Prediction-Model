@@ -1,0 +1,8 @@
+Resources used:
+https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+https://sparkbyexamples.com/pandas/pandas-create-dataframe-from-multiple-series/
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html
+https://www.geeksforgeeks.org/filter-pandas-dataframe-with-multiple-conditions/
+https://www.statology.org/pandas-plot-multiple-series/
+https://pandas.pydata.org/docs/reference/api/pandas.Series.plot.line.html
+https://pandas.pydata.org/docs/reference/api/pandas.Series.plot.bar.html
