@@ -36,28 +36,28 @@ The project consists of using a csv dataset with 4269 rows of loan approval data
 - Split data into training and testing sets
 - Scaled the data using `StandardScaler`
 
-### Results 
+### Results: 
 **Accuracy:** 90%
 **Precision:** 'Approved' - 93%, 'Rejected' - 87%
 **Recall:** 'Approved' - 92%, 'Rejected' - 87%
 
-### Model Optimization
-- I repeated the same steps above but for features (X) I removed 'education' and 'self-employed' as their feature absolute magnitudes were the lowest; results were near identical except for the precision for 'Approved' dropped by one point. 
+### Model Optimization:
+- Features (X) such as 'education' and 'self-employed' were removed as their feature absolute magnitudes were the lowest - results were near identical except for the precision for 'Approved' dropped by one point. 
 - Additional logistic regression models were tested by other group members, but the highest score remaints the one described above using all features with 90% accuracy. 
 
-### Additional Models Tested
-- I also ran a random forest model and the dataset and received 60% accuracy using all features and 98% accuracy by dropping 'education' and 'self_employed', neither results of which seemed reliable. 
+### Additional Models Tested:
+- Random forest model was applied and received 60% accuracy using all features and 98% accuracy by dropping 'education' and 'self_employed'. 
 - All models and optimized models tested are saved in the 'Models' folder
 - Additional models were tested by other group members 
 
-### Exploratory Analysis 
+### Exploratory Analysis:
 - Variable correlaton heatmap
 - Distribution bar charts for 'education', 'self-employed', and 'loan_status'
 - Frequency distribution histograms for 'income_annum', 'loan_amount', and 'cibil_score'
 - Scatterplot of 'loan_amount' vs 'income_annum' colored by 'cibil_score'
 - Distribution by 'loan_status' boxplots for 'income_annum', 'loan_amount', and 'cibil_score'
 
-### Additional Figures
+### Additional Figures:
 - Confusion matrix for logistic regression model
 - Confusion matrix for optmized logistic regression model
 - Feature importance for logistic regression model
@@ -71,13 +71,5 @@ ChatGPT (visualizations & model troubleshooting )
 04-Stu_Predicting_Diabetes - Supervised Learning, day 1 (logistic regression model)
 05-Ins_Random_Forest - Supervised Learning, day 2 (randon forest model)
 20-Supervised-Learning homework assigntment - Credit Risk Classification (logistic regression model)
-
-
-
-
-
-
-### Factors to Consider to Choose Model:
-What are various factors, such loan amount, loan term, and education level, that affect the outcome of a loan application? 
 
 
