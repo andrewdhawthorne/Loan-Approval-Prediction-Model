@@ -1,5 +1,5 @@
 # Loan-Approval-Prediction-Model
-## Team Deep Learning Deviants 
+## Team: Deep Learning Deviants 
 ### Team Members:
 Elizabeth Lawal | Ryan Blais | Jenipher Flores | Fidel Carrillo | Andrew Hawthorne 
 
