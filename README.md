@@ -58,7 +58,7 @@ Csv dataset contains 4269 rows of loan approval data with the following columns:
 **Final accuracy score: 88%**
 **Confusion Matrix**
 
-<img width="500" src="[https://github.com/andrewdhawthorne/Loan-Approval-Prediction-Model/blob/Ryan's_Branch/Visualizations/ConfusionMatrix.png]"> 
+<img width="500" src="https://github.com/andrewdhawthorne/Loan-Approval-Prediction-Model/blob/Ryan's_Branch/Visualizations/ConfusionMatrix.png"> 
 
 #### Takeaways:
 **Key Feature: Credit Score**
